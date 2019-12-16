@@ -15,6 +15,7 @@ public class Main {
 
 	static List<VersenyAllomasok> allomasokTarolo;
 	static Scanner be = new Scanner(System.in);
+	static String elsosor;
 	
 	public static void main(String[] args) {		
 		allomasokTarolo = new ArrayList<>();
@@ -32,8 +33,9 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("2/7 részfeladat: A fájl létrehozva.");
-		
+		System.out.println("2/7 részfeladat: A fájl létrehozva.");		
+		int atlagosVersenyzoSzam = Integer.parseInt(elsosor) / allomasokTarolo.size();
+		System.out.println("2/8 részfeladat: Az átlagos versenyzőszám: "+ atlagosVersenyzoSzam);
 		
 		
 	}
@@ -46,6 +48,7 @@ public class Main {
 		if (sorok.size()>20) {
 			System.out.println("A file -ba több mint 20 sor van.");
 		}else {
+			elsosor = sorok.get(0);
 			for (String sor : sorok.subList(1, sorok.size())) {
 				String[] adat = sor.split(";");
 				allomasokTarolo.add(new VersenyAllomasok(
